@@ -1,0 +1,77 @@
+import Button from "../../components/Button";
+import PoolImage from "../../assets/Pool.png"
+
+export default function PromoBanner() {
+  return (
+    <section className="py-12 px-4 w-full">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Banner Container */}
+        <div className="relative bg-[#BC1D4A] rounded-[2rem] overflow-hidden p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between shadow-lg">
+          
+          {/* Background SVG Watermark */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/4 -translate-y-1/2 w-96 h-96 text-[#A2163E] pointer-events-none z-0">
+            <svg 
+              viewBox="0 0 24 24" 
+              fill="currentColor" 
+              className="w-full h-full -rotate-45 opacity-80"
+            >
+              {/* Tag Shape */}
+              <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z" />
+              {/* Heart Cutout (Using a darker color to simulate the cutout) */}
+              <path 
+                fill="#BC1D4A" 
+                d="M13.5 15.5l-3-3c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0l.17.17.17-.17c.78-.78 2.05-.78 2.83 0s.78 2.05 0 2.83l-3 3z" 
+              />
+            </svg>
+          </div>
+
+          {/* Left Content (Text & Buttons) */}
+          <div className="relative z-10 w-full md:w-[55%] text-white mb-10 md:mb-0">
+            <h2 className="font-['Plus_Jakarta_Sans'] text-4xl md:text-5xl lg:text-[54px] font-bold leading-tight mb-4">
+              Summer Sales: Up to <br className="hidden lg:block" /> 40% Off!
+            </h2>
+            
+            <p className="font-['Plus_Jakarta_Sans'] text-[15px] md:text-base leading-relaxed text-white/90 max-w-md mb-8">
+              Exclusive member deals on flights and luxury hotels for your next summer getaway. Valid until Oct 31st.
+            </p>
+            
+            <div className="flex flex-wrap items-center gap-4">
+				{/* Primary Button */}
+				<Button 
+				  variant="white" 
+				  size="md" 
+				  className="text-[#BC1D4A]"
+				>
+				  Explore Deals
+				</Button>
+
+				{/* Secondary Button */}
+				<Button 
+				  variant="outline" 
+				  size="md"
+				>
+				  Join Club T-Goda
+				</Button>
+            </div>
+          </div>
+
+          {/* Right Content (Image) */}
+          <div className="relative z-10 w-full md:w-[40%] flex justify-center md:justify-end">
+            <div className="w-full max-w-[340px] aspect-square rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 ease-in-out">
+              {/* Tilted Image Wrapper */}
+              <div className="w-full h-full rounded-[14px] overflow-hidden">
+                <img 
+                  src={PoolImage} 
+                  alt="Summer Getaway Placeholder" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
