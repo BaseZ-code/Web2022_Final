@@ -7,7 +7,7 @@ export default function PromoBanner() {
       <div className="max-w-6xl mx-auto">
 
         {/* Banner Container */}
-        <div className="relative bg-[#BC1D4A] rounded-[2rem] p-8 md:py-8 md:px-12 lg:py-10 lg:px-16 flex flex-col md:flex-row items-center justify-between shadow-lg">
+        <div className="relative bg-[#BC1D4A] rounded-[2rem] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between shadow-lg">
 
           {/* Background SVG Watermark */}
           <div className="absolute inset-0 overflow-hidden rounded-[2rem] pointer-events-none z-0">
@@ -60,7 +60,7 @@ export default function PromoBanner() {
 
           {/* Right Content (Image) */}
           <div className="relative z-10 w-full md:w-[40%] flex justify-center md:justify-end">
-            <div className="w-full max-w-[420px] rounded-2xl drop-shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 ease-in-out translate-x-2 md:translate-x-6">
+            <div className="w-full max-w-[420px] aspect-[4/3] rounded-2xl drop-shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 ease-in-out translate-x-2 md:translate-x-6">
               <img
                 src={PoolImage}
                 alt="Summer Getaway Placeholder"

@@ -4,6 +4,7 @@ import FeaturesSection from './Feature';
 import TrendingDestinations from './Trending';
 import PromoBanner from './Banner';
 import NewsletterSubscription from './Newsletter';
+import Footer from '../../components/Footer';
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 			<TrendingDestinations />
 			<PromoBanner />
 			<NewsletterSubscription />
+			<Footer/ >
 		</div>
 	);
 }

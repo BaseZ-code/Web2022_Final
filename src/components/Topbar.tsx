@@ -59,9 +59,9 @@ const Topbar: React.FC<TopbarProps> = ({
     inline-flex items-center align-middle
     font-['Plus_Jakarta_Sans'] font-semibold text-[14px] 
     leading-[20px] tracking-[-0.35px] 
-    transition-colors h-full border-b-2
+    transition-colors pb-1 border-b-2
     ${isActive 
-      ? 'text-[#005CBD] border-[#005CBD]' 
+      ? 'text-[#005CBD] border-[#005CBD] -translate-y-0.5' 
       : 'text-[#475569] border-transparent hover:text-[#005CBD]'}
   `;
 
@@ -80,7 +80,7 @@ const Topbar: React.FC<TopbarProps> = ({
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex flex-1 justify-start space-x-8 h-full">
+          <div className="hidden md:flex flex-1 justify-start items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}

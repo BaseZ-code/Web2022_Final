@@ -1,18 +1,16 @@
-import Home from "./pages/home/Home";
+import { Route, Routes } from "react-router-dom";
+import { HotelPage } from "./pages/hotel/HotelPage";
+import { NotFound } from "./pages/NotFound";
 import Reservation from "./pages/reservation/Reservation";
-
-type Page = 'Home' | 'Reservation';
+import Home from "./pages/home/Home";
 
 export default function App() {
-	const currentPage: Page = 'Reservation';
-
-	if (currentPage === 'Home') {
-		return (
-			<Home />
-		);
-	} else if (currentPage == 'Reservation') {
-		return (
-			<Reservation />
-		);
-	}
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/hotels" element={<HotelPage />} />
+      <Route path="/reservation" element={<Reservation />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
 }

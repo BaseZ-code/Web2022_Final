@@ -27,7 +27,7 @@ export default function NavBar() {
 			logo={<h1 className="font-jakarta font-black text-[24px] leading-[32px] tracking-[-1.2px] align-middle text-[#2563EB]">T-Goda</h1>} 
 			navLinks={navLinks} 
 			buttons={buttons}
-			currentPath="/docs"
+			currentPath="/hotels"
 		/>
 	);
 }

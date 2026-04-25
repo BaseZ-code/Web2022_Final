@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import BangkokImage from "../../assets/Bangkok.png" 
 import TokyoImage from "../../assets/Tokyo.png" 
 import ParisImage from "../../assets/Paris.png" 
@@ -66,7 +67,7 @@ export default function TrendingDestinations() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {destinationsData.map((destination) => (
-            <div key={destination.id} className="group cursor-pointer">
+            <Link key={destination.id} to="/hotels" className="group cursor-pointer no-underline text-inherit">
               
               {/* Image Container */}
               <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden mb-4">
@@ -99,7 +100,7 @@ export default function TrendingDestinations() {
                 </p>
               </div>
               
-            </div>
+            </Link>
           ))}
         </div>
 
