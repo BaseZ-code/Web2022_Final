@@ -5,7 +5,7 @@ import type { Review } from './reviewData';
 
 function StarFull() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="#FACC14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
     </svg>
   );
@@ -16,7 +16,7 @@ function StarHalf() {
     <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <linearGradient id="half-grad">
-          <stop offset="50%" stopColor="#F59E0B" />
+          <stop offset="50%" stopColor="#FACC14" />
           <stop offset="50%" stopColor="#D1D5DB" />
         </linearGradient>
       </defs>
@@ -38,7 +38,7 @@ function StarEmpty() {
 
 function StarRow({ rating }: { rating: number }) {
   return (
-    <div className="flex items-center gap-0.5" aria-label={`${rating} out of 5 stars`}>
+    <div className="flex items-center gap-0.5 flex-shrink-0" aria-label={`${rating} out of 5 stars`}>
       {[1, 2, 3, 4, 5].map((i) => {
         if (rating >= i) return <StarFull key={i} />;
         if (rating >= i - 0.5) return <StarHalf key={i} />;
@@ -52,9 +52,9 @@ function StarRow({ rating }: { rating: number }) {
 
 function ReviewCard({ review }: { review: Review }) {
   return (
-    <article className="flex flex-col gap-4 bg-white rounded-2xl border border-[#E5E7EB] p-5 shadow-sm flex-1 min-w-0">
+    <article className="flex flex-col gap-4 bg-white rounded-2xl border border-[#E5E7EB] p-5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex-1 min-w-0">
       {/* Top row: stars + date */}
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <StarRow rating={review.rating} />
         <span
           className="text-[14px] font-normal text-[#424753] leading-[100%] whitespace-nowrap"
@@ -66,7 +66,7 @@ function ReviewCard({ review }: { review: Review }) {
 
       {/* Quote */}
       <p
-        className="text-[14px] font-normal text-[#191C22] leading-[160%] flex-1"
+        className="text-[16px] font-normal italic text-[#191C22] leading-[24px] flex-1"
         style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
       >
         {review.quote}
@@ -89,13 +89,13 @@ function ReviewCard({ review }: { review: Review }) {
         {/* Name + country */}
         <div>
           <p
-            className="text-[14px] font-semibold text-[#191C22] leading-[100%]"
+            className="text-[16px] font-normal text-[#191C22] leading-[24px]"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             {review.reviewer.name}
           </p>
           <p
-            className="text-[13px] font-normal text-[#424753] leading-[100%] mt-0.5"
+            className="text-[12px] font-normal text-[#424753] leading-[18px]"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             {review.reviewer.country}
@@ -130,7 +130,7 @@ export default function GuestReviews() {
       </div>
 
       {/* Cards grid */}
-      <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-6">
         {reviews.map((review) => (
           <ReviewCard key={review.id} review={review} />
         ))}

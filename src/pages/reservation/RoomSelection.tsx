@@ -23,22 +23,22 @@ export default function RoomSelection() {
       </h2>
 
       {/* Table card */}
-      <div className="rounded-2xl border border-[#E5E7EB] bg-white shadow-sm overflow-x-auto">
+      <div className="rounded-2xl border border-[#E5E7EB] bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-x-auto">
         <table className="w-full border-collapse">
           {/* Header */}
           <thead>
-            <tr className="border-b border-[#E5E7EB] bg-[#F8F9FA]">
+            <tr className="border-b border-[#E5E7EB] bg-[#F2F3FC]">
               {TABLE_HEADERS.map((header) => (
                 <th
                   key={header}
-                  className="px-6 py-4 text-left text-[16px] font-bold text-[#191C22] leading-[100%] align-middle"
+                  className="px-6 py-6 text-left text-[16px] font-bold text-[#191C22] leading-[100%] align-middle"
                   style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                 >
                   {header}
                 </th>
               ))}
               {/* Empty header for the Select column */}
-              <th className="px-6 py-4" aria-label="Select room" />
+              <th className="px-6 py-6" aria-label="Select room" />
             </tr>
           </thead>
 

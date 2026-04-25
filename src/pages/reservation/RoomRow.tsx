@@ -71,7 +71,7 @@ function RoomRow({ room, isFirst, onSelect }: RoomRowProps) {
           {room.badge && (
             <span
               className={`inline-block text-white text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-sm leading-tight ${
-                room.badge.color === 'red' ? 'bg-[#C0392B]' : room.badge.color === 'blue' ? 'bg-[#005CBD]' : 'bg-green-600'
+                room.badge.color === 'red' ? 'bg-[#B61B4A]' : room.badge.color === 'blue' ? 'bg-[#005CBD]' : 'bg-green-600'
               }`}
               style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
             >
@@ -149,7 +149,7 @@ function RoomRow({ room, isFirst, onSelect }: RoomRowProps) {
         </ul>
         {room.urgency && (
           <p
-            className="text-[14px] font-bold text-[#C0392B] mt-2"
+            className="text-[14px] font-bold text-[#B61B4A] mt-2"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             {room.urgency}
