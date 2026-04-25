@@ -4,7 +4,7 @@ import Reservation from "./pages/reservation/Reservation";
 type Page = 'Home' | 'Reservation';
 
 export default function App() {
-	const currentPage: Page = 'Home';
+	const currentPage: Page = 'Reservation';
 
 	if (currentPage === 'Home') {
 		return (
